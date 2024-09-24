@@ -1,0 +1,44 @@
+﻿# Ignore arquivos de credenciais
+credentials.json
+token.json
+
+# Ignore as pastas de binários e objetos
+bin/
+obj/
+
+# Ignore arquivos temporários de depuração e build
+*.log
+*.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore pacotes instalados
+packages/
+*.nupkg
+*.snupkg
+
+# Ignore dependências do NuGet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Configurações do Visual Studio
+.vs/
+
+# Diretórios de configuração do Rider (JetBrains)
+.idea/
+.idea_modules/
+
+# Arquivos temporários do sistema operacional
+*.DS_Store
+*.directory
+Thumbs.db
+
+# Ignore arquivos do Quartz.NET que podem ser gerados
+*.quartz
+
+# Configurações de ambiente local
+.env
