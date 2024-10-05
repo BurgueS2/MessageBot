@@ -6,13 +6,13 @@ using Google.Apis.Util.Store;
 
 namespace MessageBot;
 
-public class CalendarServer
+public static class CalendarServer
 {
     private static readonly string[] Scopes = [CalendarService.Scope.CalendarReadonly];
     private const string ApplicationName = "MessageBot";
     private const string CredentialsFilePath = "credentials.json";
     private const string TokenFilePath = "token.json";
-
+    
     public static Events GetEvents()
     {
         var credential = GetUserCredential();
@@ -32,7 +32,7 @@ public class CalendarServer
             CancellationToken.None,
             new FileDataStore(TokenFilePath, true)).Result; // Salva o token de acesso
     }
-
+    
     private static CalendarService CreateCalendarService(UserCredential userCredential)
     {
         return new CalendarService(new BaseClientService.Initializer()
@@ -41,7 +41,7 @@ public class CalendarServer
             ApplicationName = ApplicationName
         });
     }
-
+    
     private static Events FetchEvents(CalendarService service)
     {
         var request = service.Events.List("primary");
